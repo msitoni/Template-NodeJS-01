@@ -1,0 +1,19 @@
+{
+  "name": "template-nodejs-01",
+  "version": "1.0.0",
+  "description": "\"# Template-NodeJS-01\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msitoni/Template-NodeJS-01.git"
+  },
+  "author": "Marcio A. Sitoni <msitoni@hotmail.com> (https://www.sitoni.com.br/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msitoni/Template-NodeJS-01/issues"
+  },
+  "homepage": "https://github.com/msitoni/Template-NodeJS-01#readme"
+}
