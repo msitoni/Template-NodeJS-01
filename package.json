@@ -1,19 +1,39 @@
 {
-  "name": "template-nodejs-01",
-  "version": "1.0.0",
-  "description": "\"# Template-NodeJS-01\"",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/msitoni/Template-NodeJS-01.git"
-  },
-  "author": "Marcio A. Sitoni <msitoni@hotmail.com> (https://www.sitoni.com.br/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/msitoni/Template-NodeJS-01/issues"
-  },
-  "homepage": "https://github.com/msitoni/Template-NodeJS-01#readme"
+    "name": "sistema-orcamento",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "lint": "./node_modules/.bin/eslint src/*.js",
+        "prepush": "npm run lint",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "./node_modules/.bin/webpack --colors --progress",
+        "watch": "npm run build -- -- watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/msitoni/sistema-orcamento.git"
+    },
+    "author": "Marcio A. Sitoni <msitoni@hotmail.com> (https://www.sitoni.com.br/)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/msitoni/sistema-orcamento/issues"
+    },
+    "homepage": "https://github.com/msitoni/sistema-orcamento#readme",
+    "devDependencies": {
+        "@babel/plugin-transform-runtime": "^7.5.5",
+        "babel": "^6.23.0",
+        "eslint": "^6.3.0",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-plugin-import": "^2.18.2",
+        "husky": "^3.0.4",
+        "webpack": "^4.39.2",
+        "webpack-cli": "^3.3.7"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.5.5",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.0.6",
+        "babel-preset": "^1.0.15"
+    }
 }
