@@ -1,4 +1,4 @@
-import { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro } from './util/Util'
+import { converterFormatoNumeroBrasileiroParaAmericano } from './util/Util';
 
 
 const a = 10;
