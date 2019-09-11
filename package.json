@@ -11,7 +11,9 @@
         "watch": "npm run build -- --watch",
         "server": "./node_modules/.bin/webpack-dev-server --inline --open",
         "build:watch": "webpack -w --mode development",
-        "build:prod": "webpack --mode production"
+        "build:prod": "webpack --mode production",
+        "scss-web": "./node_modules/.bin/node-sass  ./src/client/web/scss -o ./dist/css",
+        "scss-mobile": "node-sass -watch src/client/mobile/scss -o dist/css"
     },
     "repository": {
         "type": "git",
@@ -36,6 +38,7 @@
         "eslint-plugin-import": "^2.18.2",
         "husky": "^3.0.4",
         "mocha": "^6.2.0",
+        "node-sass": "^4.12.0",
         "uglifyjs-webpack-plugin": "^2.2.0",
         "webpack": "^4.39.3",
         "webpack-cli": "^3.3.8",
@@ -45,6 +48,7 @@
         "@babel/runtime": "^7.5.5",
         "babel-core": "^6.26.3",
         "babel-loader": "^8.0.6",
-        "babel-preset": "^1.0.15"
+        "babel-preset": "^1.0.15",
+        "sass": "^1.23.0-module.beta.1"
     }
 }

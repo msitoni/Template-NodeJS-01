@@ -1,0 +1,24 @@
+$myfont: Georgia 1.1em;
+$table_head_col: #ccc;
+$table_row_col: #eee;
+$table_bor_col: #eee;
+$container_width: 700px;
+$first_col_width: 150px;
+div.container {
+    margin: auto;
+    font: $myfont;
+    width: $container_width;
+}
+
+table {
+    tr:nth-child(odd) {
+        background: $table_row_col
+    }
+    td:first-child {
+        width: $first_col_width
+    }
+    th {
+        background-color: $table_head_col;
+    }
+    border: 1px solid $table_bor_col;
+}
