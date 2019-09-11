@@ -1,5 +1,13 @@
-//import { converterFormatoNumeroBrasileiroParaAmericano } from './util/Util';
+console.log("teste");
 
-import sum from './util/Util';
+console.log("teste 2");
 
-alert(sum(a + b));
+console.log("teste 3");
+
+console.log("teste 4");
+
+console.log("teste 6");
+
+console.log("teste 7");
+
+console.log("teset 8")

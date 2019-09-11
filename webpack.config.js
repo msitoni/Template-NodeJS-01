@@ -1,10 +1,9 @@
 const webpack = require('webpack');
-const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
 const nodeENV = process.env.NODE_ENV || 'production';
 
 module.exports = {
+
     devtool: 'source-map',
     entry: {
         filename: './src/index.js'
@@ -12,7 +11,7 @@ module.exports = {
     mode: 'development', //'development', // 'production',
 
     output: {
-        filename: './dist/build.js'
+        filename: 'build.js'
     },
     module: {
         rules: [{
