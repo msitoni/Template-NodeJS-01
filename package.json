@@ -13,14 +13,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/msitoni/sistema-orcamento.git"
+        "url": "git+https://github.com/msitoni/Template-NodeJS-01.git"
     },
     "author": "Marcio A. Sitoni <msitoni@hotmail.com> (https://www.sitoni.com.br/)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/msitoni/sistema-orcamento/issues"
+        "url": "https://github.com/msitoni/Template-NodeJS-01/issues"
     },
-    "homepage": "https://github.com/msitoni/sistema-orcamento#readme",
+    "homepage": "https://github.com/msitoni/Template-NodeJS-01#readme",
     "devDependencies": {
         "@babel/plugin-transform-runtime": "^7.5.5",
         "babel": "^6.23.0",

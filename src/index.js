@@ -1,6 +1,5 @@
-import { converterFormatoNumeroBrasileiroParaAmericano } from './util/Util';
+//import { converterFormatoNumeroBrasileiroParaAmericano } from './util/Util';
 
+import sum from './util/Util';
 
-const a = 10;
-
-console.log(converterFormatoNumeroBrasileiroParaAmericano(a));
+alert(sum(a + b));

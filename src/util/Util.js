@@ -1,3 +1,4 @@
+/*
 const converterFormatoNumeroBrasileiroParaAmericano = (number) => {
     !number ? number = "0,00" : number = number;
     if (number.toString().indexOf(',') == -1) {
@@ -20,3 +21,11 @@ const converterFormatoNumeroAmericanoParaBrasileiro = (number) => {
 
 
 export { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro };
+
+*/
+
+function sum(a, b) {
+    return a + b;
+}
+
+export default sum;
