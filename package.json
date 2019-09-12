@@ -14,7 +14,9 @@
         "build:prod": "webpack --mode production",
         "scss-web": "./node_modules/.bin/node-sass  ./src/client/web/scss -o ./dist/css",
         "scss-mobile": "node-sass -watch src/client/mobile/scss -o dist/css",
-        "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch"
+        "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+        "test:coverage": "nyc npm test"
+
     },
     "repository": {
         "type": "git",
@@ -41,6 +43,7 @@
         "husky": "^3.0.4",
         "mocha": "^6.2.0",
         "node-sass": "^4.12.0",
+        "nyc": "^14.1.1",
         "uglifyjs-webpack-plugin": "^2.2.0",
         "webpack": "^4.39.3",
         "webpack-cli": "^3.3.8",

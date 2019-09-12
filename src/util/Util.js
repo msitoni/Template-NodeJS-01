@@ -1,18 +1,16 @@
-/*
 const converterFormatoNumeroBrasileiroParaAmericano = (number) => {
     !number ? number = "0,00" : number = number;
     if (number.toString().indexOf(',') == -1) {
         return parseFloat(number);
     } else {
-        value = parseFloat(number.replace(/[.]/g, "").replace(",", "."));
-        return value;
+        return parseFloat(number.replace(/[.]/g, "").replace(",", "."));
     }
 };
 
 
 const converterFormatoNumeroAmericanoParaBrasileiro = (number) => {
     !number ? number = "0,00" : number = number;
-    number = parseFloat(n);
+    number = parseFloat(number);
     if (!number) {
         number = 0;
     }
@@ -20,12 +18,4 @@ const converterFormatoNumeroAmericanoParaBrasileiro = (number) => {
 };
 
 
-export { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro };
-
-*/
-
-function sum(a, b) {
-    return a + b;
-}
-
-export default sum;
+export { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro }
