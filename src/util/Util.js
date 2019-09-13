@@ -1,3 +1,5 @@
+import { API_URL } from '../Config';
+
 const converterFormatoNumeroBrasileiroParaAmericano = (number) => {
     if (!number) {
         return '0.00';
@@ -18,14 +20,19 @@ const converterFormatoNumeroAmericanoParaBrasileiro = (number) => {
     return parseFloat(number).toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+\,)/g, "$1.");
 };
 
-const converterDataFormatoAmericano = (data) => {
 
-    if (data != null && data.indexOf == -1) {
-        return dataFormatoAmericano = new Date(data.split('/').reverse().join('-')); //moment().format('YYYY-MM-DD');
-    } else {
-        return null;
-    }
 
+const search = (query, type) => {
+    const TOKEN_API = 'BQA1wiuoe92XJgv62D5ut7RfPSL6F9AON_Qs2Fr0nUEhw1ev35A36F9gQUzYEnqm62pqFCcNVzo6Gnhqv6-U-nPGpDulbHvHcXSM2fVKrdO8jF2_q9d6RYJMi7aB0JuuX5CaHFOx8pLOTyI';
+    const HEADERS = {
+        headers: {
+            'Authorization': `'Bearer  ${TOKEN_API} '`,
+        }
+    };
+
+    return fetch(`${API_URL}/search?q=${query}&type=${type}`, HEADERS).then(toJSON);
 };
 
-export { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro, converterDataFormatoAmericano }
+const toJSON = data => data.json();
+
+export { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro, search, toJSON }

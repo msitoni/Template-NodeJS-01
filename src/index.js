@@ -1,13 +1,9 @@
-console.log('teste');
+import { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro, search, toJSON } from './util/Util'
 
-console.log('teste 2');
 
-console.log('teste 3');
-
-console.log('teste 4');
-
-console.log('teste 6');
-
-console.log('teste 7');
-
-console.log('teset 8');
+module.exports = {
+    converterFormatoNumeroBrasileiroParaAmericano,
+    converterFormatoNumeroAmericanoParaBrasileiro,
+    search,
+    toJSON
+}

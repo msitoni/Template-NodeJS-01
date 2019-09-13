@@ -1,7 +1,17 @@
-import { expect } from 'chai';
-import { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro, converterDataFormatoAmericano } from '../src/util/Util'
+import chai, { expect } from 'chai';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
+chai.use(sinonChai);
+
+
+global.fetch = require('node-fetch');
+
+import { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro, search } from '../src/util/Util'
+import { isRegExp } from 'util';
+import { Context } from 'mocha';
 
 describe('Util', () => {
+
 
 
     describe('Smoke Tests', () => {
@@ -15,10 +25,7 @@ describe('Util', () => {
             expect(converterFormatoNumeroBrasileiroParaAmericano).to.be.a('function');
         });
 
-        it('should exist method converterDataFormatoAmericano', () => {
-            expect(converterDataFormatoAmericano).to.exist;
-            expect(converterDataFormatoAmericano).to.be.a('function');
-        });
+
     });
 
     describe('converterFormatoNumeroAmericanoParaBrasileiro', () => {
@@ -51,15 +58,46 @@ describe('Util', () => {
         });
     });
 
-    describe('converterDataFormatoAmericano', () => {
-        it('compares dates regardless of their associated times', () => {
-            var actual = new Date(2013, 4, 30, 16, 6),
-                expected = new Date(2013, 4, 30, 16, 6);
+    describe('Generic Search', () => {
 
-            expect(actual).to.be.equal(expected);
+        let fetchedStub;
+        let promise;
+
+        beforeEach(() => {
+
+            fetchedStub = sinon.stub(global, 'fetch');
+            fetchedStub.resolves({ json: () => {} });
+
         });
 
+        afterEach(() => {
+            fetchedStub.restore();
+        })
+
+        it('should call fetch function', () => {
+            const artists = search();
+            expect(fetchedStub).to.have.been.calledOnce;
+        });
+
+
+
+        it('should call fetch with correct URL', () => {
+            context('passing one type', () => {
+                const artists = search('Incubus', 'artist');
+                expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist');
+
+                const albuns = search('Incubus', 'album');
+                expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=album');
+
+            });
+
+            context('passing more than one type', () => {
+                const artistsAndAlbums = search('Incubus', ['artist', 'album']);
+                expect(fetchedStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist,album');
+            });
+        });
+
+
+
     });
-
-
 });
