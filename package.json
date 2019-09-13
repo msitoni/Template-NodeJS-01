@@ -20,8 +20,13 @@
     "nyc": {
         "functions": 80,
         "lines": 80,
-        "reporter": ["text", "html"],
-        "exclude": ["tests/**"]
+        "reporter": [
+            "text",
+            "html"
+        ],
+        "exclude": [
+            "tests/**"
+        ]
     },
     "repository": {
         "type": "git",
@@ -47,8 +52,11 @@
         "eslint-plugin-import": "^2.18.2",
         "husky": "^3.0.4",
         "mocha": "^6.2.0",
+        "node-fetch": "^2.6.0",
         "node-sass": "^4.12.0",
         "nyc": "^14.1.1",
+        "sinon-chai": "^3.3.0",
+        "sinon-stub-promise": "^4.0.0",
         "uglifyjs-webpack-plugin": "^2.2.0",
         "webpack": "^4.39.3",
         "webpack-cli": "^3.3.8",

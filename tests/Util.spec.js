@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro } from '../src/util/Util'
+import { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro, converterDataFormatoAmericano } from '../src/util/Util'
 
 describe('Util', () => {
 
@@ -15,6 +15,10 @@ describe('Util', () => {
             expect(converterFormatoNumeroBrasileiroParaAmericano).to.be.a('function');
         });
 
+        it('should exist method converterDataFormatoAmericano', () => {
+            expect(converterDataFormatoAmericano).to.exist;
+            expect(converterDataFormatoAmericano).to.be.a('function');
+        });
     });
 
     describe('converterFormatoNumeroAmericanoParaBrasileiro', () => {
@@ -23,6 +27,12 @@ describe('Util', () => {
         });
         it('should return `16,35` when converterFormatoNumeroAmericanoParaBrasileiro(16.35)', () => {
             expect(converterFormatoNumeroAmericanoParaBrasileiro(16.35)).to.be.equal('16,35');
+        });
+        it('should return `0,00` when converterFormatoNumeroAmericanoParaBrasileiro()', () => {
+            expect(converterFormatoNumeroAmericanoParaBrasileiro('')).to.be.equal('0,00');
+        });
+        it('should return `10,00` when converterFormatoNumeroAmericanoParaBrasileiro(10)', () => {
+            expect(converterFormatoNumeroAmericanoParaBrasileiro(10)).to.be.equal('10,00');
         });
     });
 
@@ -33,6 +43,23 @@ describe('Util', () => {
         it('should return `16.35` when converterFormatoNumeroBrasileiroParaAmericano(16,35)', () => {
             expect(converterFormatoNumeroBrasileiroParaAmericano('16,35')).to.be.equal(16.35);
         });
+        it('should return `0.00` when converterFormatoNumeroBrasileiroParaAmericano()', () => {
+            expect(converterFormatoNumeroBrasileiroParaAmericano('')).to.be.equal('0.00');
+        });
+        it('should return `10` when converterFormatoNumeroBrasileiroParaAmericano(10)', () => {
+            expect(converterFormatoNumeroBrasileiroParaAmericano('10')).to.be.equal(10);
+        });
     });
+
+    describe('converterDataFormatoAmericano', () => {
+        it('compares dates regardless of their associated times', () => {
+            var actual = new Date(2013, 4, 30, 16, 6),
+                expected = new Date(2013, 4, 30, 16, 6);
+
+            expect(actual).to.be.equal(expected);
+        });
+
+    });
+
 
 });

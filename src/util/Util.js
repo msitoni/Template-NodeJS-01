@@ -1,5 +1,7 @@
 const converterFormatoNumeroBrasileiroParaAmericano = (number) => {
-    !number ? number = "0,00" : number = number;
+    if (!number) {
+        return '0.00';
+    }
     if (number.toString().indexOf(',') == -1) {
         return parseFloat(number);
     } else {
@@ -9,13 +11,21 @@ const converterFormatoNumeroBrasileiroParaAmericano = (number) => {
 
 
 const converterFormatoNumeroAmericanoParaBrasileiro = (number) => {
-    !number ? number = "0,00" : number = number;
-    number = parseFloat(number);
     if (!number) {
-        number = 0;
+        return "0,00";
     }
+    number = parseFloat(number);
     return parseFloat(number).toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+\,)/g, "$1.");
 };
 
+const converterDataFormatoAmericano = (data) => {
 
-export { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro }
+    if (data != null && data.indexOf == -1) {
+        return dataFormatoAmericano = new Date(data.split('/').reverse().join('-')); //moment().format('YYYY-MM-DD');
+    } else {
+        return null;
+    }
+
+};
+
+export { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro, converterDataFormatoAmericano }
