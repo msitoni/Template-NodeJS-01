@@ -1,4 +1,9 @@
-import { converterFormatoNumeroBrasileiroParaAmericano, converterFormatoNumeroAmericanoParaBrasileiro, search, toJSON } from './util/Util'
+import {
+    converterFormatoNumeroBrasileiroParaAmericano,
+    converterFormatoNumeroAmericanoParaBrasileiro,
+    search,
+    toJSON
+} from './util/Util';
 
 
 module.exports = {
@@ -6,4 +11,4 @@ module.exports = {
     converterFormatoNumeroAmericanoParaBrasileiro,
     search,
     toJSON
-}
+};
